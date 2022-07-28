@@ -4,3 +4,115 @@
     box-sizing: border-box;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgb(40, 35, 35);
+}
+.nav{
+    background: azure;
+    width: 400px;
+    height: 100px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border: 2px solid #03d7e2;
+}
+.nav ul{
+    display: flex;
+    width: 350px;
+}
+.nav ul li{
+    width: 70px;
+    height: 70px;
+    list-style: none;
+    position: relative;
+    z-index: 1;
+}
+.nav ul li a{
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.nav ul li a .icn{
+    text-align: center;
+    font-size: 2rem;
+    display: block;
+    position: relative;
+    line-height: 90px;
+    transition: .5s;
+    color: #03d7e2;
+}
+.nav ul li.active a .icn{
+    transform: translateY(-25px);
+}
+.nav ul li a .txt{
+    font-size: 1rem;
+    font-weight: 500;
+    color: blue;
+    position: absolute;
+    letter-spacing: 0.07em;
+    opacity: 0;
+}
+.nav ul li.active a .txt{
+    transform: translateY(15px);
+    opacity: 1;
+}
+.indctrs{
+    background: #c7ddf6;
+    width: 70px;
+    height: 75px;
+    position: absolute;
+    border: 5px solid #039be2;
+    border-radius: 50%;
+    top: -10px;
+    transition: 0.5s;
+}
+/*
+.indctrs::before{
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: -22;
+    content: ' ';
+    position: absolute;
+    background: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 0px -10px 0 0 #03d7e2;
+}
+.indctrs::after{
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: -22;
+    content: '';
+    position: absolute;
+    background: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: 0px -10px 0 0 #03d7e2;
+}
+*/
+.nav ul li:nth-child(1).active ~ .indctrs{
+    transform: translateX(calc(70px * 0));
+}
+.nav ul li:nth-child(2).active ~ .indctrs{
+    transform: translateX(calc(70px * 1));
+}
+.nav ul li:nth-child(3).active ~ .indctrs{
+    transform: translateX(calc(70px * 2));
+}
+.nav ul li:nth-child(4).active ~ .indctrs{
+    transform: translateX(calc(70px * 3));
+}
+.nav ul li:nth-child(5).active ~ .indctrs{
+    transform: translateX(calc(70px * 4));
+}
